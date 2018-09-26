@@ -28,9 +28,23 @@ function showResults(json) {
 }
 
 function createIssue() {
-  //use this function to create an issue based on the values input in index.html
-}
+  const url = `https://api.github.com/repos/dannyenfp/js-ajax-fetch-lab/issues`;
+  const postData = {
+    title: document.getElementById('title').value,
+    body: document.getElementById('body').value
+  };
 
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(postData),
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  })
+    .then(res => res.json())
+    .then(json => getIssues());
+}    
+    
 function getIssues() {
   //once an issue is submitted, fetch all open issues to see the issues you are creating
 }

@@ -17,7 +17,7 @@ function forkRepo() {
   }).then(res => res.json()).then(json => showResults(json));
 // 
 
-/repos/:owner/:repo/forks  
+//repos/:owner/:repo/forks  
 
 //'https://api.github.com/repos/learn-co-curriculum/javascript-fetch-lab/forks'
 }
